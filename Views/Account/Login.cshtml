@@ -1,0 +1,83 @@
+﻿@model WebBanHang.Context.ThanhVien
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-conten padding-y" style="min-height:84vh">
+    <!-- ============================ COMPONENT LOGIN   ================================= -->
+    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Sign in</h4>
+            @using (Ajax.BeginForm("Login", "Account", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "ThongBao" }))
+            {
+                @Html.AntiForgeryToken()
+            <form>
+                <a href="#" class="btn btn-facebook btn-block mb-2"> <i class="fab fa-facebook-f"></i> &nbsp  Sign in with Facebook</a>
+                <a href="#" class="btn btn-google btn-block mb-4"> <i class="fab fa-google"></i> &nbsp  Sign in with Google</a>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UserName)
+                    @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @placeholder = "UserName" })
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PassWord)
+                    @Html.PasswordFor(model => model.PassWord, new { @class = "form-control", @placeholder = "Password" })
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <h2 style="color: red ; font-size:14px" id="ThongBao"></h2>
+                </div>
+                <div class="form-group">
+                    <a href="#" class="float-right">Forgot password?</a>
+                    <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""> <div class="custom-control-label"> Remember </div> </label>
+                </div> <!-- form-group form-check .// -->
+                <div class="form-group">
+                    <button type="submit" onclick="return Login();" class="btn btn-primary btn-block"> Login  </button>
+                </div> <!-- form-group// -->
+
+            </form>
+        }
+        </div> <!-- card-body.// -->
+    </div> <!-- card .// -->
+    <p class="text-center mt-4">Don't have account? <a href="#">Sign up</a></p>
+    <br><br>
+    <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
+
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+@*<script>
+    function Login() {
+    var check = true;
+
+    var username = getValue('username');
+    if (username == '' || username.length < 5 || !/^[a-zA-Z0-9]+$/.test(username)) {
+        check = false;
+        showError('username', 'Vui lòng kiểm tra lại Username');
+    }
+
+    var password = getValue('password');
+    var repassword = getValue('repassword');
+    if (password == '' || password.length < 8 || password != repassword) {
+        flag = false;
+        showError('password', 'Vui lòng kiểm tra lại Password');
+    }
+
+    // 3. Phone
+    var phone = getValue('phone');
+    if (phone != '' && !/^[0-9]{10}$/.test(phone)) {
+        flag = false;
+        showError('phone', 'Vui lòng kiểm tra lại Phone');
+    }
+
+    // 4. Email
+    var email = getValue('email');
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!mailformat.test(email)) {
+        flag = false;
+
+        showError('phone', 'Vui lòng kiểm tra lại Email');
+    }
+
+    return check;
+}
+</script>*@

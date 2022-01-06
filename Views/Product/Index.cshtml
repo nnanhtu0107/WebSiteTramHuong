@@ -1,0 +1,113 @@
+﻿@model IEnumerable<WebBanHang.Context.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="page-wrapper">
+    
+    <p>
+        @Html.ActionLink("Thêm Sản Phẩm","AddSP", "Product")
+    </p>
+    <div class="main-page">
+        <table class="table table-borderless table-shopping-cart">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaSP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenSP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayCapNhat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChatLieu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoTa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HinhAnh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoLuongTon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Moi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaNCC)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaNSX)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaLoaiSP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DaXoa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonGia)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayCapNhat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChatLieu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoTa)
+                    </td>
+                    <td>
+                       <img style="width: 100px; height: 100px;" src="~/Public/images/HinhAnhSanPham/@item.HinhAnh" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuongTon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Moi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaNCC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaNSX)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaLoaiSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DaXoa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonGia)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EditSP", "Product", new {id = item.MaSP})">Edit</a>
+                        @*@Html.ActionLink("Edit","EditSP", "Product", new { id = item.MaSP })*@
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })
+                        <a href="@Url.Action("DeleteSP", "Product", new {id = item.MaSP})">Delete</a>
+                        
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>
+
+

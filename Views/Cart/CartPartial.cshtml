@@ -1,0 +1,14 @@
+﻿<div class="top-cart-contain pull-right">
+    <div class="mini-cart">
+        <div class="basket dropdown-toggle">
+            <a href="@Url.Action("Index", "Cart", new {})" title="Giỏ hàng">
+                <img src="~/Public/images/cart/cart.png" alt="TramHuong">
+                <div class="cart-box">
+                    <span id="cart-total">
+                        <b class="count_item_pr">@ViewBag.TongSoLuong</b>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

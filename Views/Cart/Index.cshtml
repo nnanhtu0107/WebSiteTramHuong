@@ -1,0 +1,185 @@
+﻿@using WebBanHang.Models
+@model List<ItemCartModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ========================= SECTION CONTENT ========================= -->
+
+@if (Model.Count == 0)
+{
+    <h1>Giỏ Hàng Trống</h1>
+}
+else
+{
+    <section class="section-content padding-y">
+        <div class="container">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <ol class="breadcrumb float-left">
+                        <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                        <li class="breadcrumb-item"><a href="#">Giỏ Hàng</a></li>
+                        <li class="breadcrumb-item active">Chi Tiết Giỏ Hàng</li>
+                    </ol>
+                </div> <!-- card-body .// -->
+            </div> <!-- card.// -->
+            <div class="row">
+                <main class="col-md-9">
+                    <div class="card">
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead class="text-muted">
+                                <tr class="small text-uppercase">
+                                    <th>MãSP</th>
+                                    <th scope="col">Tên Sản Phẩm</th>
+                                    <th scope="col" width="120">Số Lượng</th>
+                                    <th scope="col" width="120">Đơn Giá</th>
+                                    <th scope="col" width="120">Thành Tiền</th>
+                                    <th scope="col" class="text-right" width="150"> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <figure class="itemside">
+                                                @item.MaSP
+                                            </figure>
+                                        </td>
+                                        <td>
+                                            <figure class="itemside">
+                                                <div class="aside"><img src="~/Public/images/SanPhamTheoDanhMuc/@item.HinhAnh" class="img-sm"></div>
+                                                <figcaption class="info">
+                                                    <a href="#" class="title text-dark">@item.TenSP</a>
+                                                </figcaption>
+                                            </figure>
+                                        </td>
+                                        <td>
+                                            @item.SoLuong
+                                        </td>
+                                        <td>
+                                            <div class="price-wrap">
+                                                <var class="price">@item.DonGia.ToString("#,##") vnđ</var>
+                                            </div> <!-- price-wrap .// -->
+                                        </td>
+                                        <td>
+                                            <div class="price-wrap">
+                                                <var class="price">@item.InToMoney.ToString("#,##") vnđ</var>
+                                            </div> <!-- price-wrap .// -->
+                                        </td>
+                                        <td class="text-right">
+                                            <a href="@Url.Action("FixCart", "Cart", new { @MaSP = item.MaSP })" class="btn btn-light">Sửa</a>
+                                        </td>
+                                        <td class="text-right">
+                                            <a href="@Url.Action("DeleteCart", "Cart", new { @MaSP = item.MaSP })" class="btn btn-light">Xóa</a>
+                                        </td>
+
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                        <div class="card-body border-top">
+                            @using (Html.BeginForm("Order", "Cart"))
+                            {
+                                if (Session["UserName"] == null)
+                                {
+                                    <div class="card mx-auto">
+                                        <header class="mb-0 py-1"><h4 class="card-title text-center">Thông Tin Đặt Hàng</h4></header>
+                                        <form id="form_InfoKH">
+                                            <table>
+                                                <tr>
+                                                    <td>Họ Tên:</td>
+                                                    <td>
+                                                        @Html.TextBox("TenKH")
+                                                        <span style="color: red;" id="TenKH_error"></span>
+                                                    </td>
+                                                </tr> <!-- form-row end.// -->
+                                                <tr>
+                                                    <td>Địa Chỉ:</td>
+                                                    <td>
+                                                        @Html.TextArea("DiaChi")
+                                                        <span style="color: red;" id="DiaChi_error"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email:</td>
+                                                    <td>
+                                                        @Html.TextBox("Email")
+                                                        <span style="color: red;" id="Email_error"></span>
+                                                    </td>
+                                                </tr> <!-- form-group end.// -->
+                                                <tr>
+                                                    <td>Điện Thoại:</td>
+                                                    <td>
+                                                        @Html.TextBox("SoDienThoai")
+                                                        <span style="color: red;" id="SoDienThoai_error"></span>
+                                                    </td>
+                                                </tr> <!-- form-group end.// -->
+                                                <tr>
+                                                    <td>
+                                                        <input class="btn btn-primary float-md-right " name="btn" type="submit" value="Đặt Hàng" onclick="return validate()" />
+                                                        <a href="@Url.Action("Index", "Home")" class="btn" style="color: #CC4227;"> Tiếp Tục Mua Sắm </a>
+                                                    </td>
+                                                </tr> <!-- form-group end.// -->
+                                            </table>
+                                        </form>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div style="padding-top: 5px;">
+                                        <input id="btnDatHang" class="btn btn-primary float-md-right " type="submit" value="Đặt Hàng" />
+                                    </div>
+                                    <div>
+                                        <a href="@Url.Action("Index", "Home")" class="btn" style="color: #CC4227;"> Tiếp Tục Mua Sắm </a>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div> <!-- card.// -->
+                    <div class="alert alert-success mt-3">
+                        <p class="icontext"><i class="icon text-success fa fa-truck"></i>Giao hàng miễn phí trong vòng 1-2 tuần</p>
+                    </div>
+                </main> <!-- col.// -->
+            </div>
+        </div> <!-- container .//  -->
+    </section>
+}
+<script>
+    @*function getValue(id) {
+    return document.getElementById(id).value.trim();
+}
+// Hiển thị lỗi
+function showError(key, mess) {
+    document.getElementById(key + '_error').innerHTML = mess;
+}
+function validate() {
+    var flag = true;
+    var TenKH = getValue("TenKH");
+    if (TenKH == "") {
+        flag = false;
+        showError("TenKH", "Vui lòng nhập Tên");
+    }
+    var DiaChi = getValue("DiaChi");
+    if (DiaChi == "") {
+        flag = false;
+        showError("DiaChi", "Vui lòng nhập Địa Chỉ");
+    }
+    var SoDienThoai = getValue("SoDienThoai");
+    if (SoDienThoai != "" && !/^[0-9]{10}$/.test(SoDienThoai)) {
+        flag = false;
+        showError("SoDienThoai", "Vui lòng kiểm tra lại Phone");
+    }
+    var Email = getValue("Email");
+    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!mailformat.test(Email)) {
+        flag = false;
+        showError("Email", "Vui lòng kiểm tra lại Email");
+    }
+    return flag;
+}*@
+</script>
+<script src="~/Public/js/Validation.js"></script>

@@ -1,0 +1,20 @@
+﻿@model List<WebBanHang.Context.LoaiSanPham>
+<ul id="nav">
+    <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+    <li>
+        <a href="#">
+            Sản Phẩm
+            <img class="down_icon" src="~/Public/images/dropdown.png" />
+        </a>
+        <ul class="subnav">
+            @foreach (var item in Model)
+            {
+                <li><a href="#">@item.TenLoai</a></li>
+            }
+        </ul>
+    </li>
+    <li><a href="#">Tin Mới</a></li>
+    <li><a href="#">Trầm Hương Phong Thủy</a></li>
+    <li><a href="#">Giới Thiệu</a></li>
+    <li><a href="#">Liên Hệ</a></li>
+</ul>

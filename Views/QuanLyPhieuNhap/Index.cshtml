@@ -1,0 +1,91 @@
+﻿@model PhieuNhap
+@using WebBanHang.Context
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@{ 
+    IEnumerable<NhaCungCap> lstNCC = ViewBag.MaNCC as IEnumerable<NhaCungCap>;
+}
+<div id="page-wrapper">
+    @using (Html.BeginForm())
+    {
+    <div class="row">
+        <div class="col-md-12 ThongTinPhieuNhap">
+            <div class="col-md-2">
+                Nhà Cung Cấp
+            </div>
+            <div class="col-md-5">
+                <select class="MaNCC form-control" name="MaNCC">
+                    @foreach (var item in lstNCC)
+                    {
+                        <option value="@item.MaNCC">@item.TenNCC</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br />
+        <div class="col-md-12">
+            <div class="col-md-2">
+                Ngày Cập Nhật
+            </div>
+            <div class="col-md-5">
+                <input name="NgayNhap" class="date form-control" type="date" />
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br /> <br /> <br />
+        <div class="clearfix"></div>
+        <table class="tblChiTietPhieuNhap table table-borderless table-shopping-cart">
+            @{IEnumerable<SanPham> lstSanPham = ViewBag.ListSanPham as IEnumerable<SanPham>; }
+            <tr class="trAppend" style="display: none;">
+                <td>
+                    <select class="ddlSanPham" name="">
+                        @foreach (var item in lstSanPham)
+                        {
+                            <option value="@item.MaSP">@item.TenSP</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <input name="" class="txtDonGia" value="0" />
+                </td>
+                <td>
+                    <input name="" class="txtSoLuong" value="0" />
+                </td>
+                <td>
+                    <input class="btnDelete btn btn-danger" style="width: 30px; height: 30px" value="-" />
+                </td>
+            </tr>
+            <tr data-id="-1">
+                <td>Sản Phẩm</td>
+                <td>Đơn Giá Nhập</td>
+                <td>Số Lượng Nhập</td>
+                <td></td>
+            </tr>
+        </table>
+        <input type="button" value="+" class="btn btn-success" id="btnAdd"/>
+        <input type="submit" value="Nhập Hàng" class="btn btn-primary" id="btnNhapHang" />
+    </div>
+
+    }
+</div>
+<script>
+    $("#btnAdd").click(function () {
+        //var id_cuoi = $(".tblChiTietPhieuNhap").find("tr:last-child").attr("data-id");
+        //i = parseInt(id_cuoi) + 1;
+        var tdnoidung = $(".trAppend").html();
+        var trnoidung = "<tr class=\"trAppended\"data-id=\""+""+"\">" + tdnoidung + "</tr>";
+        $(".tblChiTietPhieuNhap").append(trnoidung);
+/*        loadIDLENTHE();*/
+    })
+    //su kien xoa
+    //$(".btnDelete").click(function () {
+    //    $(this).closest(".trAppended").remove();
+    //})
+    $("body").delegate(".btnDelete", "click", function () {
+        $(this).closest(".trAppended").remove();
+    })
+</script>
+

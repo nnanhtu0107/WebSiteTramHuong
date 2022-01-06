@@ -1,0 +1,230 @@
+﻿@model WebBanHang.Models.HomeModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<link href="~/Public/css/Home/index.css" rel="stylesheet" />
+
+<!-- =============== SECTION DEAL // END =============== -->
+<!-- =============== SECTION 1 =============== -->
+
+<div class="container">
+    <!-- ========================= SECTION MAIN  ========================= -->
+    <section>
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner content">
+                            <div class="carousel-item active">
+                                <img src="~/Public/images/carousel/vong-tram-huong-4ly.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Public/images/carousel/vong-tram-huong-deo-co-chim-nuoc.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Public/images/carousel/vong-tram-huong.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12 boxer">
+                    <div class="box_set">
+                        <a href="#" title="Miễn phí giao hàng">
+                            <div class="icon">
+                                <img alt="TramHuong" src="~/Public/images/icon/set_cf1.png">
+                            </div>
+                            <div class="set_content">
+                                <p class="tt_boxser">
+                                    Miễn phí giao hàng
+                                </p>
+                                <p class="content_boxer">
+                                    Hóa đơn mua hàng trên 300k - Bán kính 4km
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <hr />
+                    <div class="box_set">
+                        <a href="#" title="Miễn phí giao hàng">
+                            <div class="icon">
+                                <img alt="TramHuong" src="~/Public/images/icon/set_cf2.png">
+                            </div>
+                            <div class="set_content">
+                                <p class="tt_boxser">
+                                    Mua Hàng (T2-CN)
+                                </p>
+                                <p class="content_boxer">
+                                    Mở cửa các ngày trong tuần (8h30-16h30)
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <hr />
+                    <div class="box_set">
+                        <a href="#" title="Miễn phí giao hàng">
+                            <div class="icon">
+                                <img alt="TramHuong" src="~/Public/images/icon/set_cf3.png">
+                            </div>
+                            <div class="set_content">
+                                <p class="tt_boxser">
+                                    Hệ Thống Trầm Hương
+                                </p>
+                                <p class="content_boxer">
+                                    Quy trình sản xuất đạt chuẩn
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-3">
+            <div class="row">
+                <div class=" text-center">
+                    <a class="title" href="">Danh Mục Sản Phẩm</a>
+                </div>
+                @foreach (var item in Model.ListCategory.Take(4))
+                {
+                    <div class="col-md-3">
+                        <div class="product">
+
+                            <div class="product__m__c__content__item">
+                                <a href="@Url.Action("ProductCategory", "Category", new { @id = item.MaLoaiSP }, null)"
+                                   title="@item.TenLoai">
+                                    <div class="product__m__c__content__item__image">
+                                        <img class="ls-is-cached lazyloaded"
+                                             alt="Vòng tay trầm hương"
+                                             src="~/Public/images/DanhMucSanPham/@item.Icon" />
+                                    </div>
+                                </a>
+                                <h2>
+                                    @item.TenLoai
+                                </h2>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section>
+    <!-- ========================= SECTION MAIN END// ========================= -->
+    <!-- =============== SECTION DEAL =============== -->
+    <!-- =============== SECTION DEAL // END =============== -->
+    <!-- =============== SECTION 1 =============== -->
+    <section class="padding-bottom container">
+        <header class="section-heading heading-line">
+            <h4 class="title-section text-uppercase">Sản phẩm nổi bật</h4>
+        </header>
+        <div class="card card-home-category">
+            <div class="row no-gutters">
+                <!--  <div class="col-md-3">
+
+         <div class="home-category-banner bg-light-orange">
+             <h5 class="title">Machinery items for manufacturers</h5>
+             <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+             <a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
+             <img src="images/items/14.jpg" class="img-bg">
+         </div>
+     </div> <!-- col.// 
+                <div class="col-md-9">  -->
+                    <ul class="row no-gutters bordered-cols">
+                        @foreach (var item in Model.ListProduct.Where(n => n.Moi == 1))
+                        {
+                            <li class="col-6 col-lg-3 col-md-4">
+                                <a href="@Url.Action("Detail", "Product", new {id = item.MaSP })" class="item title">
+                                    <div class="card-body">
+                                        <img class="img-sm float-right" src="~/Public/images/HinhAnhSanPham/@item.HinhAnh">
+                                        <h6 class="title">@item.TenSP </h6>
+                                        <p class="text-muted"><i class="fa fa-map-marker-alt"></i> @item.DonGia đ</p>
+                                    </div>
+                                </a>
+                            </li>
+
+                        }
+                    </ul>
+                </div> <!-- col.// -->
+            </div> <!-- row.// -->
+        </div> <!-- card.// -->
+    </section>
+    <!-- =============== SECTION 1 END =============== -->
+    <!-- =============== SECTION 2 =============== -->
+    <section class="padding-bottom container">
+        <header class="section-heading heading-line">
+            <h4 class="title-section text-uppercase">Sản Phẩm Mới</h4>
+        </header>
+        <div class="card card-home-category">
+            <div class="row no-gutters">
+                <!--- <div class="col-md-3">
+
+        <div class="home-category-banner bg-light-orange">
+            <h5 class="title">Best trending clothes only for summer</h5>
+            <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <a href="#" class="btn btn-outline-primary rounded-pill">Source now</a>
+            <img src="images/items/2.jpg" class="img-bg">
+        </div>
+    </div>-->
+                <!-- col.//
+    <div class="col-md-9">-->
+                <ul class="row g-4 bordered-cols">
+                    @foreach (var item in Model.ListProduct.Where(n => n.Moi == 0))
+                    {
+                        <li class=" col-6 col-lg-2 col-md-4">
+                            <a href="@Url.Action("Detail", "Product", new {id = item.MaSP })" class="item title">
+                                <div class="card-body">
+                                    <img class="img-sm float-right" src="~/Public/images/HinhAnhSanPham/@item.HinhAnh">
+                                    <div class="card-body__content p-2">
+                                    <h6 class="title">@item.TenSP</h6>
+                                    <p class="text-muted"><i class="fa fa-map-marker-alt"></i> @item.DonGia đ</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    }
+                </ul>
+            </div> <!-- col.// -->
+            </div> <!-- row.// -->
+        </div> <!-- card.// -->
+    </section>
+
+    <!-- =============== SECTION 2 END =============== -->
+    <!-- =============== SECTION REQUEST =============== -->
+    <section class="padding-bottom-sm container">
+        <header class="section-heading heading-line">
+            <h4 class="title-section text-uppercase">Sản phẩm</h4>
+        </header>
+        <div class="row row-sm">
+            @foreach (var item in Model.ListProduct)
+            {
+                <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                    <div href="#" class="card card-sm card-product-grid">
+                        <a href="@Url.Action("Detail", "Product", new {id = item.MaSP })" class="img-wrap"> <img src="~/Public/images/HinhAnhSanPham/@item.HinhAnh"> </a>
+                        <figcaption class="info-wrap">
+                            <a href="#" class="title">@item.TenSP da sd á dá d asd asd a ư d wcc ư c ưa da</a>
+                            <div class="price mt-1">@item.DonGia đ</div> <!-- price-wrap.// -->
+                        </figcaption>
+                    </div>
+                </div> <!-- col.// -->
+            }
+        </div> <!-- row.// -->
+    </section>
+
+    <!-- =============== SECTION REQUEST .//END =============== -->
+    <!-- =============== SECTION ITEMS =============== -->
+    <!-- =============== SECTION ITEMS .//END =============== -->
+    <!-- =============== SECTION SERVICES =============== -->
+
+    <!-- =============== SECTION REGION .//END =============== -->

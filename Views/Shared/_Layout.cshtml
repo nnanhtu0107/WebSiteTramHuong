@@ -1,0 +1,207 @@
+﻿<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trầm Hương</title>
+    <link href="~/Public/css/template bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Public/css/template bootstrap/responsive.css" rel="stylesheet" />
+    <link href="~/Public/css/template bootstrap/ui.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Public/css/Home/Layout.css" rel="stylesheet" />
+</head>
+<body>
+    <header id="hedix">
+        <div class="header-container">
+            <div class="header-top">
+                <div class="container">
+                    <div class="welcome">Khuyến mãi cực lớn nhân dịp Năm Mới 2022. (Từ ngày 01/01 đến hết 02/02)</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 z-indexlogo">
+                    <div class="logo">
+                        <a href="#">
+                            <img alt="TramHuong" src="~/Public/images/logo-tram-huong-viet.png" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-xs-12 mobi_bt">
+                    <div class="search-box">
+                        <form action="/search" method="get" id="search_mini_form">
+                            <input type="text" class="change_pl" placeholder="Bạn cần tìm gì." value="" maxlength="70" name="query" id="search" spellcheck="false" data-ms-editor="true">
+                            <button class="btn btn-default  search-btn-bg"> <img src="~/Public/images/search/search.png" alt="TramHuong"></button>
+                        </form>
+                        <div class="fix-cart">
+                            @Html.Action("LoginPartial", "Account")
+                            @Html.Action("CartPartial", "Cart")
+                        </div>
+                    </div>
+                    <div>
+                        <ul id="nav">
+                            <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+                            <li>
+                                <a href="#">
+                                    Sản Phẩm
+                                    <img class="down_icon" src="~/Public/images/dropdown.png" />
+                                </a>
+                                <ul class="subnav">
+                                    <li><a href="#">Vòng Tay trầm Hương</a></li>
+                                    <li><a href="#">Chuỗi Hạt</a></li>
+                                    <li><a href="#">Tinh Dầu Trầm Hương</a></li>
+                                    <li><a href="#">Nhang Trầm Hương</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Tin Mới</a></li>
+                            <li><a href="#">Trầm Hương Phong Thủy</a></li>
+                            <li><a href="#">Giới Thiệu</a></li>
+                            <li><a href="#">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="footer-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 col-md-8 col-lg-8 col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <div class="footer-column dq-toggle">
+                                    <h4>Chính sách <i class="fa fa-angle-down f-right"></i></h4>
+                                    <ul class="links">
+                                        <li><a href="/" title="Trang chủ">Trang chủ</a></li>
+
+                                        <li><a href="/collections/all" title="Sản phẩm">Sản phẩm</a></li>
+
+                                        <li><a href="/tin-tuc" title="Tin mới">Tin mới</a></li>
+
+                                        <li><a href="/tin-tuc" title="Trầm Hương Phong Thủy">Trầm Hương Phong Thủy</a></li>
+
+                                        <li><a href="/gioi-thieu" title="Giới thiệu">Giới thiệu</a></li>
+
+                                        <li><a href="/lien-he" title="Liên hệ">Liên hệ</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <div class="footer-column dq-toggle">
+                                    <h4>Kênh bán hàng <i class="fa fa-angle-down f-right"></i></h4>
+                                    <ul class="links">
+
+                                        <li><a href="/" title="Trang chủ">Trang chủ</a></li>
+
+                                        <li><a href="/collections/all" title="Sản phẩm">Sản phẩm</a></li>
+
+                                        <li><a href="/tin-tuc" title="Tin mới">Tin mới</a></li>
+
+                                        <li><a href="/tin-tuc" title="Trầm Hương Phong Thủy">Trầm Hương Phong Thủy</a></li>
+
+                                        <li><a href="/gioi-thieu" title="Giới thiệu">Giới thiệu</a></li>
+
+                                        <li><a href="/lien-he" title="Liên hệ">Liên hệ</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <div class="footer-column dq-toggle">
+                                    <h4>Về chúng tôi <i class="fa fa-angle-down f-right"></i></h4>
+                                    <ul class="links">
+
+                                        <li><a href="/" title="Trang chủ">Trang chủ</a></li>
+
+                                        <li><a href="/collections/all" title="Sản phẩm">Sản phẩm</a></li>
+
+                                        <li><a href="/tin-tuc" title="Tin mới">Tin mới</a></li>
+
+                                        <li><a href="/tin-tuc" title="Trầm Hương Phong Thủy">Trầm Hương Phong Thủy</a></li>
+
+                                        <li><a href="/gioi-thieu" title="Giới thiệu">Giới thiệu</a></li>
+
+                                        <li><a href="/lien-he" title="Liên hệ">Liên hệ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                                <div class="footer-column-last vbline">
+                                    <h4>Liên hệ</h4>
+                                    <address>
+                                        <img class="mg_r_2" src="~/Public/images/support/on-maps.png" alt="TramHuong">
+                                        <span>Da nag </span>
+                                    </address>
+                                    <div class="phone-footer">
+                                        <img class="mg_r_2" src="~/Public/images/support/old-phone.png" alt="TramHuong">
+                                        <a href="000" title="000">00000000</a>
+                                    </div>
+                                    <div class="email-footer">
+                                        <img class="mg_r_2" src="~/Public/images/support/email-envelope.png" alt="TramHuong">
+                                        <a href="#" title="support@gmail.vn">support@gmail.vn</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-md-4 col-lg-4 col-xs-12">
+                        <div class="footer-column-1">
+                            <div class="footer-logo">
+                                <a href="/" title="TramHuong">
+                                    <img alt="TramHuong" src="~/Public/images/logo-tram-huong-viet.png">
+                                </a>
+                            </div>
+                            <p>Cửa Hàng Trầm Hương</p>
+                        </div>
+                        <div class="footer-column-1">
+                            <div class="social">
+                                <div class="onut">
+                                    <a href="#" class="facebook" target="_blank" title="Facebook">
+                                        <img src="~/Public/images/mxh/facebook.png" alt="facebook">
+                                    </a>
+                                    <a href="#" target="_blank" class="twitter" title="Twitter">
+                                        <img src="~/Public/images/mxh/twitter.png" alt="twitter">
+                                    </a>
+                                    <a href="#" target="_blank" class="instagram" title="Instagram+">
+                                        <img src="~/Public/images/mxh/instagram.png" alt="instagram">
+                                    </a>
+                                    <a href="#" target="_blank" class="youtube" title="Youtube">
+                                        <img src="~/Public/images/mxh/youtube.png" alt="youtube">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="payment-accept">
+                                <div>
+                                    <img class="first" src="~/Public/images/cart/payment-1.png">
+                                    <img src="~/Public/images/cart/payment-2.png">
+                                    <img src="~/Public/images/cart/payment-3.png">
+                                    <img src="~/Public/images/cart/payment-4.png">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="coppyright">
+                        Bản quyền thuộc về <a href="" title="TramHuong" target="_blank" rel="nofollow">TramHuong</a>.
+                        <span class="opacity1">
+                            Cung cấp bởi<a href="#" rel="nofollow" title="" target="_blank">TramHuong</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

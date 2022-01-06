@@ -1,0 +1,248 @@
+﻿@model List<WebBanHang.Context.LoaiSanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- ========================= SECTION CONTENT ========================= -->
+@*< <div class="content__bottom">
+    <div class="content__bottom__m">
+        <div class="content__bottom__m__c">
+            <div class="content__m__c__left">
+                <div class="content__m__c__left__title"><span> Danh mục sản phẩm </span></div>
+                @foreach (var item in Model)
+                {
+                    <div class="content__m__c__left__link product">
+                        <a href="vong-tram-huong-108.html" title="Vòng Trầm Hương 108 hạt"><h2>@item.TenLoai</h2></a>
+                    </div>
+                }
+
+                <div class="content__m__c__left__title"><span>Bài viết mới</span></div>
+                <div class="content__m__c__left__link  first ">
+                    <a href="vong-tram-huong.html" title="Vòng trầm hương - Những điều mà bạn cần phải biết trước khi mua"><h2>Vòng trầm hương - Những điều mà bạn cần phải biết trước khi mua</h2></a>
+                </div>
+                <div class="content__m__c__left__link ">
+                    <a href="tram-huong-ep-dau-va-nhung-sai-lam-ma-ban-nghi-ve-no.html" title="Trầm hương ép dầu và những sai lầm mà bạn nghĩ về nó."><h2>Trầm hương ép dầu và những sai lầm mà bạn nghĩ về nó.</h2></a>
+                </div>
+                <div class="content__m__c__left__link ">
+                    <a href="cach-kiem-tra-tinh-dau-tram-huong-nguyen-chat.html" title="Cách kiểm tra tinh dầu trầm hương nguyên chất"><h2>Cách kiểm tra tinh dầu trầm hương nguyên chất</h2></a>
+                </div>
+                <div class="content__m__c__left__link ">
+                    <a href="2-hop-chat-hiem-duoc-phat-hien-trong-tinh-dau-tram-huong-bang-phuong-phap-thuy-phan.html" title="2 hợp chất hiếm đã được phát hiện trong tinh dầu trầm hương bằng phương pháp thủy phân."><h2>2 hợp chất hiếm đã được phát hiện trong tinh dầu trầm hương bằng phương pháp thủy phân.</h2></a>
+                </div>
+                <div class="content__m__c__left__link ">
+                    <a href="nuoi-kien-tao-tram-huong.html" title="Cấy tạo trầm hương từ dịch kiến"><h2>Cấy tạo trầm hương từ dịch kiến</h2></a>
+                </div>
+                <div class="content__m__c__left__ads">
+                    <img class="lazyload" data-src="https://tramhuongviet.com/images/hotline.jpg" alt="Hot line">
+                </div>
+            </div>
+            <div class="content__m__c__right">
+                <div class="content__m__c__right__content">
+                    <div class="content__m__c__right__content__item ">
+                        <a href="san-pham/vong-tram-huong-108-6ly-ch21.html" title="Vòng Trầm Hương 108 6ly CH21">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-6ly-ch21-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-6ly-ch21.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-6ly-ch21-large.webp" alt="Vòng Trầm Hương 108 6ly CH21" />
+                                </picture>
+                            </div>
+                            <h3>Vòng Trầm Hương 108 6ly CH21</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            250.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__item ">
+                        <a href="san-pham/vong-tram-huong-4ly-216-ch5.html" title="Vòng trầm hương 4ly 216 CH5">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-4ly-216-ch5-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-4ly-216-ch5.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-4ly-216-ch5-large.webp" alt="Vòng trầm hương 4ly 216 CH5" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương 4ly 216 CH5</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            1.950.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__item  last ">
+                        <a href="san-pham/vong-tram-huong-chim-nuoc-vt190.html" title="Vòng trầm hương chìm nước VT190">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-chim-nuoc-vt190-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-chim-nuoc-vt190.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-chim-nuoc-vt190-large.webp" alt="Vòng trầm hương chìm nước VT190" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương chìm nước VT190</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            150.000.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__3clear"></div>
+                    <div class="content__m__c__right__content__item ">
+                        <a href="san-pham/vong-tram-huong-108-chim-nuoc-ch19.html" title="Vòng trầm hương 108 chìm nước CH19">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-chim-nuoc-ch19-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-chim-nuoc-ch19.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-chim-nuoc-ch19-large.webp" alt="Vòng trầm hương 108 chìm nước CH19" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương 108 chìm nước CH19</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            120.000.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__item ">
+                        <a href="san-pham/vong-tram-huong-216-hat-ch3.html" title="Vòng trầm hương 216 hạt CH3">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-216-ch3-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-216-ch3.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-216-ch3-large.webp" alt="Vòng trầm hương 216 hạt CH3" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương 216 hạt CH3</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            5.200.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__item  last ">
+                        <a href="san-pham/vong-tram-huong-108-ch18.html" title="Vòng trầm hương 108 CH18">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch18-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch18.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch18-large.webp" alt="Vòng trầm hương 108 CH18" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương 108 CH18</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            50.000.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__3clear"></div>
+                    <div class="content__m__c__right__content__item ">
+                        <a href="san-pham/vong-tram-huong-108-ch17.html" title="vòng trầm hương 108 ch17">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch17-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch17.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch17-large.webp" alt="vòng trầm hương 108 ch17" />
+                                </picture>
+                            </div>
+                            <h3>vòng trầm hương 108 ch17</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            330.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__item ">
+                        <a href="san-pham/vong-tram-huong-vt189.html" title="Vòng trầm hương VT189">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tay-tram-huong-vt189-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tay-tram-huong-vt189.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tay-tram-huong-vt189-large.webp" alt="Vòng trầm hương VT189" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương VT189</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            7.900.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__item  last ">
+                        <a href="san-pham/vong-tram-huong-108-ch16.html" title="vòng trầm hương 108 ch16">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch16-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch16.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch16-large.webp" alt="vòng trầm hương 108 ch16" />
+                                </picture>
+                            </div>
+                            <h3>vòng trầm hương 108 ch16</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            4.000.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__3clear"></div>
+                    <div class="content__m__c__right__content__item ">
+                        <a href="san-pham/vong-tram-huong-108-ch15.html" title="Vòng trầm hương 108 CH15">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch15-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch15.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-108-ch15-large.webp" alt="Vòng trầm hương 108 CH15" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương 108 CH15</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            5.000.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__item ">
+                        <a href="san-pham/vong-tram-huong-108-ch14.html" title="Vòng trầm hương 108 CH14">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tay-tram-huong-108-ch14-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tay-tram-huong-108-ch14.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tay-tram-huong-108-ch14-large.webp" alt="Vòng trầm hương 108 CH14" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương 108 CH14</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            3.500.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__item  last ">
+                        <a href="san-pham/vong-tram-huong-boc-vang-vt188.html" title="Vòng trầm hương bọc vàng VT188">
+                            <div class="content__m__c__right__content__item__img ">
+                                <picture>
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-boc-vang-vt188-large.webp" type="image/webp">
+                                    <source data-srcset="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-boc-vang-vt188.jpg" type="image/jpeg">
+                                    <img class="lazyload" data-src="https://tramhuongviet.com/assets/images/san-pham/vong-tram-huong-boc-vang-vt188-large.webp" alt="Vòng trầm hương bọc vàng VT188" />
+                                </picture>
+                            </div>
+                            <h3>Vòng trầm hương bọc vàng VT188</h3>
+                        </a>
+                        <div class="content__m__c__right__content__item__price">
+                            8.200.000đ
+                        </div>
+                    </div>
+                    <div class="content__m__c__right__content__3clear"></div>
+                    <div class="paging">
+                        <div class="paging-link">
+                            <ul class="pagination">
+                                <li class="disabled page-item">
+                                    <span class="page-link"><i class="fa fa-angle-double-left"></i></span>
+                                </li>
+
+                                <li class="active page-item"><span>1</span></li>
+                                <li class="page-item"><a href="vong-tay-tram-huong/page/2.html">...</a></li>
+                                <li class="page-item"><a href="vong-tay-tram-huong/page/6.html">6</a></li>
+
+                                <li class="page-item">
+                                    <a href="vong-tay-tram-huong/page/2.html">
+                                        >
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>*@
